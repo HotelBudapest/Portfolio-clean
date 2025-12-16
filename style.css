@@ -104,7 +104,7 @@ img {
 .page {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 10px 16px 40px;
+  padding: 5px 16px 40px;
 }
 
 /* =========
@@ -270,7 +270,7 @@ img {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 3fr);
-  margin-top: 28px;
+  margin-top: 15px;
 }
 
 @media (min-width: 900px) {
