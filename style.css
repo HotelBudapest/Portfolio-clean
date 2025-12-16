@@ -104,7 +104,7 @@ img {
 .page {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 40px 16px 40px;
+  padding: 10px 16px 40px;
 }
 
 /* =========
@@ -839,6 +839,9 @@ footer {
     font-size: 0.8rem;
     gap: 12px;
   }
+  .hero-aside {
+      padding-top: 10px;
+  }
 }
 
 /* Mobile menu button (hidden on desktop) */
@@ -856,17 +859,13 @@ footer {
   cursor: pointer;
 }
 
-/* Base: hide links on mobile by default */
-.nav-links {
-  display: none;
+/* Base nav-links: desktop-ish defaults */
+.nav-links a {
+  position: relative;
+  padding-bottom: 3px;
 }
 
-/* When nav is "open" on mobile, show dropdown */
-.nav.nav--open .nav-links {
-  display: flex;
-}
-
-/* Mobile dropdown layout */
+/* ----- Mobile dropdown behaviour ----- */
 @media (max-width: 767px) {
   .nav-inner {
     position: relative;
@@ -884,6 +883,26 @@ footer {
     flex-direction: column;
     gap: 8px;
     border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+
+    /* animation bits */
+    display: flex;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition:
+      max-height 0.25s ease,
+      opacity 0.2s ease,
+      transform 0.25s ease;
+  }
+
+  /* When nav is open -> show dropdown smoothly */
+  .nav.nav--open .nav-links {
+    max-height: 220px;   /* adjust if you add more links */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .nav-links a {
@@ -891,7 +910,7 @@ footer {
   }
 }
 
-/* Desktop: inline navigation, hide burger */
+/* ----- Desktop: inline menu, no animation ----- */
 @media (min-width: 768px) {
   .nav-menu-toggle {
     display: none;
@@ -906,5 +925,10 @@ footer {
     background: transparent;
     padding: 0;
     border: none;
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    overflow: visible;
+    pointer-events: auto;
   }
 }
