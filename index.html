@@ -11,46 +11,46 @@
 
 <body>
   <!-- Top Nav -->
-    <header class="nav">
-      <div class="nav-inner">
-        <div class="nav-left">
-          <div class="nav-logo" aria-hidden="true"></div>
-          <div class="nav-title">Portfolio</div>
-        </div>
-
-        <!-- Mobile menu button -->
-        <button
-          id="nav-menu-toggle"
-          class="nav-menu-toggle"
-          type="button"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-        >
-          ☰
-        </button>
-
-        <!-- Nav links -->
-        <nav class="nav-links">
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#cert">Certifications</a>
-          <a href="#skills">Skills</a>
-        </nav>
-
-        <!-- Theme toggle stays on the right -->
-        <button
-          id="theme-toggle"
-          class="btn btn-toggle"
-          type="button"
-          aria-label="Toggle dark mode"
-          aria-pressed="true"
-        >
-          <span id="theme-icon" aria-hidden="true">🌙</span>
-        </button>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <div class="nav-logo" aria-hidden="true"></div>
+        <div class="nav-title">Portfolio</div>
       </div>
-    </header>
 
+      <!-- Nav links -->
+      <nav class="nav-links--desktop">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#cert">Certifications</a>
+        <a href="#skills">Skills</a>
+      </nav>
+
+      <!-- Theme toggle stays on the right -->
+      <button
+        id="theme-toggle"
+        class="btn btn-toggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="true"
+      >
+        <span id="theme-icon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ✅ Mobile popover menu - OUTSIDE header -->
+  <nav class="nav-links nav-links--mobile" id="mobile-nav">
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#cert">Certifications</a>
+    <a href="#skills">Skills</a>
+  </nav>
+
+  <!-- ✅ FAB menu button - OUTSIDE nav, separate element -->
+  <button id="nav-menu-toggle" class="nav-menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <main class="page">
     <!-- HERO / SUMMARY -->
     <section class="hero" aria-label="Intro and summary">
@@ -437,9 +437,11 @@
     const root = document.documentElement;
     const toggleBtn = document.getElementById('theme-toggle');
     const iconSpan = document.getElementById('theme-icon');
+
+    const navLinksEl = document.querySelector(".nav-links--mobile");
+    const navToggle = document.getElementById("nav-menu-toggle");
     const YEAR_SPAN = document.getElementById('year');
     const nav = document.querySelector('.nav');
-    const navToggle = document.getElementById('nav-menu-toggle');
     const navLinks = document.querySelectorAll('.nav-links a');
 
     // Year in footer
@@ -476,29 +478,39 @@
       applyTheme(next);
     });
 
-    // ----- Mobile nav toggle -----
-    if (navToggle) {
-      navToggle.addEventListener('click', (e) => {
+    if (navToggle && navLinksEl) {
+      navToggle.addEventListener("click", (e) => {
         e.stopPropagation();
-        const isOpen = nav.classList.toggle('nav--open');
-        navToggle.setAttribute('aria-expanded', String(isOpen));
+        const isOpen = navLinksEl.classList.toggle("nav--open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
       });
 
-      // Close menu when a nav link is clicked
-      navLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-          nav.classList.remove('nav--open');
-          navToggle.setAttribute('aria-expanded', 'false');
+      // Close when a link is clicked
+      navLinksEl.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          navLinksEl.classList.remove("nav--open");
+          navToggle.setAttribute("aria-expanded", "false");
         });
       });
 
-      // Close menu when clicking outside the nav
-      document.addEventListener('click', (e) => {
-        if (!nav.contains(e.target) && nav.classList.contains('nav--open')) {
-          nav.classList.remove('nav--open');
-          navToggle.setAttribute('aria-expanded', 'false');
+      // Close when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!navLinksEl.contains(e.target) && !navToggle.contains(e.target)) {
+          navLinksEl.classList.remove("nav--open");
+          navToggle.setAttribute("aria-expanded", "false");
         }
       });
+
+      // Close on scroll (while open)
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!navLinksEl.classList.contains("nav--open")) return;
+          navLinksEl.classList.remove("nav--open");
+          navToggle.setAttribute("aria-expanded", "false");
+        },
+        { passive: true }
+      );
     }
   })();
 </script>
