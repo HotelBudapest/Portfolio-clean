@@ -20,6 +20,7 @@
 
       <!-- Nav links -->
       <nav class="nav-links--desktop">
+        <a href="#summary">Summary</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
@@ -42,6 +43,7 @@
 
   <!-- ✅ Mobile popover menu - OUTSIDE header -->
   <nav class="nav-links nav-links--mobile" id="mobile-nav">
+    <a href="#summary">Summary</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#education">Education</a>
@@ -53,7 +55,7 @@
   <button id="nav-menu-toggle" class="nav-menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <main class="page">
     <!-- HERO / SUMMARY -->
-    <section class="hero" aria-label="Intro and summary">
+    <section id="summary" class="hero" aria-label="Intro and summary">
       <div class="hero-main">
         <div class="hero-badge-row">
           <div class="pill">
@@ -513,6 +515,52 @@
       );
     }
   })();
+
+  // ----- Smooth scroll + highlight for nav links -----
+  function scrollToSectionWithHighlight(targetId) {
+    const section = document.querySelector(targetId);
+    if (!section) return;
+
+    // Remove any existing highlight
+    document.querySelectorAll(".section-highlight").forEach((el) => {
+      el.classList.remove("section-highlight");
+    });
+
+    // Offset for sticky navbar
+    const navHeight = document.querySelector(".nav")?.offsetHeight || 0;
+    const sectionTop =
+      section.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+
+    // Smooth scroll
+    window.scrollTo({
+      top: sectionTop,
+      behavior: "smooth",
+    });
+
+    // Apply highlight after scroll starts
+    setTimeout(() => {
+      section.classList.add("section-highlight");
+
+      // Remove highlight after 2s
+      setTimeout(() => {
+        section.classList.remove("section-highlight");
+      }, 2000);
+    }, 300);
+  }
+
+  // Intercept nav link clicks (desktop + mobile)
+  document.querySelectorAll(
+    ".nav-links--desktop a, .nav-links--mobile a"
+  ).forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href");
+
+      if (targetId && targetId.startsWith("#")) {
+        e.preventDefault();
+        scrollToSectionWithHighlight(targetId);
+      }
+    });
+  });
 </script>
 </body>
 </html>

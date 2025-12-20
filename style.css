@@ -974,3 +974,27 @@ footer {
     background: transparent;
   }
 }
+
+/* ===== Section highlight after navigation ===== */
+.section-highlight {
+  position: relative;
+}
+
+.section-highlight::before {
+  content: "";
+  position: absolute;
+  inset: -6px -10px;
+  background: rgba(163, 230, 53, 0.35); /* lime green */
+  border-radius: 6px;
+  z-index: -1;
+  animation: highlight-fade 2s ease-out forwards;
+}
+
+@keyframes highlight-fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
