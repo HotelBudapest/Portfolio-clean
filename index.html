@@ -10,22 +10,29 @@
 </head>
 
 <body>
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-orb ambient-orb--one"></div>
+    <div class="ambient-orb ambient-orb--two"></div>
+    <div class="ambient-orb ambient-orb--three"></div>
+    <div class="ambient-grid"></div>
+    <div class="ambient-scan"></div>
+  </div>
   <!-- Top Nav -->
   <header class="nav">
     <div class="nav-inner">
       <div class="nav-left">
         <div class="nav-logo" aria-hidden="true"></div>
-        <div class="nav-title">Portfolio</div>
+        <div class="nav-title">Arian Islam</div>
       </div>
 
       <!-- Nav links -->
       <nav class="nav-links--desktop">
         <a href="#summary">Summary</a>
         <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#cert">Certifications</a>
-        <a href="#skills">Skills</a>
       </nav>
 
       <!-- Theme toggle stays on the right -->
@@ -45,10 +52,10 @@
   <nav class="nav-links nav-links--mobile" id="mobile-nav">
     <a href="#summary">Summary</a>
     <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#education">Education</a>
     <a href="#cert">Certifications</a>
-    <a href="#skills">Skills</a>
   </nav>
 
   <!-- ✅ FAB menu button - OUTSIDE nav, separate element -->
@@ -202,6 +209,54 @@
             <span class="icon">▸</span> <strong>INFO1112</strong> Operating Systems and Network Platforms<br>
             <span class="icon">▸</span>  <strong>ISYS2120</strong> Data and Information Management
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="section-header">
+        <h2 id="skills-title" class="section-title">Skills</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Languages, tooling &amp; domains</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skills-group">
+          <div class="skills-title">Languages</div>
+          <div class="skills-tags">
+            <span class="skills-tag">Python</span>
+            <span class="skills-tag">C/C++</span>
+            <span class="skills-tag">Java</span>
+            <span class="skills-tag">Ruby</span>
+            <span class="skills-tag">JavaScript / TypeScript</span>
+            <span class="skills-tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-title">Data &amp; Backend</div>
+          <div class="skills-tags">
+            <span class="skills-tag">Databricks / Spark</span>
+            <span class="skills-tag">REST APIs</span>
+            <span class="skills-tag">Flask / FastAPI</span>
+            <span class="skills-tag">PostgreSQL</span>
+            <span class="skills-tag">GitHub Actions</span>
+            <span class="skills-tag">Jenkins</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-title">Systems &amp; Tools</div>
+          <div class="skills-tags">
+            <span class="skills-tag">Linux</span>
+            <span class="skills-tag">Shell</span>
+            <span class="skills-tag">Git</span>
+            <span class="skills-tag">Docker (basic)</span>
+            <span class="skills-tag">Wireshark</span>
+            <span class="skills-tag">ADA</span>
+            <span class="skills-tag">Neovim</span>
+          </div>
         </div>
       </div>
     </section>
@@ -368,56 +423,6 @@
     </section>
 
 
-    <!-- SKILLS -->
-    <section id="skills" class="section" aria-labelledby="skills-title">
-      <div class="section-header">
-        <h2 id="skills-title" class="section-title">Skills</h2>
-        <div class="section-divider"></div>
-        <p class="section-subtitle">Languages, tooling &amp; domains</p>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skills-group">
-          <div class="skills-title">Languages</div>
-          <div class="skills-tags">
-            <span class="skills-tag">Python</span>
-            <span class="skills-tag">C/C++</span>
-            <span class="skills-tag">Java</span>
-            <span class="skills-tag">Ruby</span>
-            <span class="skills-tag">JavaScript / TypeScript</span>
-            <span class="skills-tag">SQL</span>
-          </div>
-        </div>
-
-        <div class="skills-group">
-          <div class="skills-title">Data &amp; Backend</div>
-          <div class="skills-tags">
-            <span class="skills-tag">Databricks / Spark</span>
-            <span class="skills-tag">REST APIs</span>
-            <span class="skills-tag">Flask / FastAPI</span>
-            <span class="skills-tag">PostgreSQL</span>
-            <span class="skills-tag">GitHub Actions</span>
-            <span class="skills-tag">Jenkins</span>
-          </div>
-        </div>
-
-        <div class="skills-group">
-          <div class="skills-title">Systems &amp; Tools</div>
-          <div class="skills-tags">
-            <span class="skills-tag">Linux</span>
-            <span class="skills-tag">Shell</span>
-            <span class="skills-tag">Git</span>
-            <span class="skills-tag">Docker (basic)</span>
-            <span class="skills-tag">Wireshark</span>
-            <span class="skills-tag">ADA</span>
-            <span class="skills-tag">Neovim</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
     <footer>
       <div>© <span id="year"></span> Arian Islam. All rights reserved.</div>
       <div class="footer-links">
@@ -557,4 +562,3 @@
 </script>
 </body>
 </html>
-
