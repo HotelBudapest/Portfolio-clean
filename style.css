@@ -780,6 +780,16 @@ img {
   margin-top: auto;
 }
 
+.project-links {
+  gap: 0.45rem;
+}
+
+.project-link {
+  padding: 0.34rem 0.62rem;
+  font-size: 0.74rem;
+  gap: 0.28rem;
+}
+
 .skills-grid {
   display: grid;
   gap: 1rem;
