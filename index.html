@@ -63,118 +63,135 @@
   <main class="page">
     <!-- HERO / SUMMARY -->
     <section id="summary" class="hero" aria-label="Intro and summary">
-      <div class="hero-main">
-        <div class="hero-badge-row">
-          <div class="pill">
-            <span class="pill-dot"></span>
-            Open to roles · 2026
+      <div class="hero-main" id="hero-summary-panel">
+        <div class="hero-intro">
+          <div class="hero-badge-row">
+            <div class="pill">
+              <span class="pill-dot"></span>
+              Open to roles · 2026
+            </div>
+            <div class="pill pill-tag">Data / Backend · Student</div>
           </div>
-          <div class="pill pill-tag">Data / Backend · Student</div>
+
+          <div class="hero-heading-row">
+            <div class="hero-heading-copy">
+              <h1 class="hero-name">Arian Islam</h1>
+              <p class="hero-subtitle">Research Assistant · Software Engineer · Data Engineer · Student</p>
+            </div>
+          </div>
+
+          <div class="hero-actions hero-actions--inline">
+            <a href="https://github.com/HotelBudapest" class="btn btn-primary" target="_blank" rel="noreferrer">
+              <span class="icon">★</span>
+              <span>View GitHub</span>
+            </a>
+            <a href="Resume.pdf" class="btn btn-primary" target="_blank" rel="noreferrer">
+              <span class="icon">★</span>
+              <span>Download CV</span>
+            </a>
+          </div>
         </div>
 
-        <h1 class="hero-name">Arian Islam</h1>
-        <p class="hero-subtitle">Research Assistant · Software Engineer · Data Engineer · Student</p>
-
-        <p class="hero-summary">
-          <strong>Majoring Computer Science &amp; Cybersecurity and building data-focused, reliable, pragmatic systems.</strong>
-          I enjoy turning messy real-world problems into clean, maintainable code – from data
-          pipelines and APIs to full-stack tools, with a focus on clear abstractions and good
-          developer experience.
-
-          Exposure to multiple domains—CS theory, cybersecurity, software engineering, and data analytics—enables me to design solutions with a holistic understanding of systems.
-        </p>
-
-        <div class="hero-actions">
-          <!-- TODO: Update links -->
-          <a href="https://github.com/HotelBudapest" class="btn btn-primary" target="_blank" rel="noreferrer">
-            <span class="icon">★</span>
-            <span>View GitHub</span>
-          </a>
-
-          <a href="Resume.pdf" class="btn btn-primary" target="_blank" rel="noreferrer">
-            <span class="icon">★</span>
-            <span>Download CV</span>
-          </a>
+        <div class="hero-summary-toggle-row">
+          <button
+            id="hero-toggle"
+            class="btn btn-outline hero-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="hero-summary-card"
+          >
+            <span id="hero-toggle-label">Learn more</span>
+          </button>
         </div>
 
-        <div class="hero-meta">
-          <div class="hero-meta-item">
-            <span class="hero-meta-bullet"></span>
-            Based in Sydney, Australia
-          </div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-bullet"></span>
-            Currently: Research Assistant at USYD, 4th Year
+      </div>
+      <div class="hero-overlay hero-overlay--hidden" id="hero-summary-card" aria-hidden="true">
+      <div class="hero-flip-shell">
+        <div class="hero-flip-card" id="hero-flip-card">
+          <article class="hero-face hero-face--front">
+            <div class="hero-face-top">
+              <div>
+                <div class="hero-panel-title">My Story</div>
+                <h2 class="hero-face-title">Clean systems, pragmatic engineering, and real-world data work.</h2>
+              </div>
+              <button id="hero-close-front" class="hero-close" type="button" aria-label="Close summary" data-hero-close>×</button>
+            </div>
 
+            <p class="hero-summary">
+              <strong>Majoring Computer Science &amp; Cybersecurity and building data-focused, reliable, pragmatic systems.</strong>
+              I enjoy turning messy real-world problems into clean, maintainable code – from data
+              pipelines and APIs to full-stack tools, with a focus on clear abstractions and good
+              developer experience.
+            </p>
 
-          </div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-bullet"></span>
-            Interested in: Data, backend, infra
-          </div>
+            <p class="hero-summary">
+              Exposure to multiple domains—CS theory, cybersecurity, software engineering, and data analytics—enables me to design solutions with a holistic understanding of systems.
+            </p>
+
+            <div class="hero-face-actions">
+              <button id="hero-flip-toggle-front" class="btn btn-outline hero-toggle-secondary" type="button">
+                View credentials
+              </button>
+            </div>
+          </article>
+
+          <article class="hero-face hero-face--back">
+            <div class="hero-face-top">
+              <div>
+                <div class="hero-panel-title">Credentials</div>
+                <h2 class="hero-face-title">Core skills and technical focus.</h2>
+              </div>
+              <button id="hero-close-back" class="hero-close" type="button" aria-label="Close summary" data-hero-close>×</button>
+            </div>
+
+            <div class="hero-creds-grid">
+              <div class="hero-panel hero-panel--compact">
+                <div class="hero-panel-header">
+                  <div class="hero-panel-title">Build Work</div>
+                  <div class="card-badge">Core</div>
+                </div>
+                <div class="hero-chip-grid">
+                  <div class="chip"><span class="chip-dot"></span> Data Pipelines</div>
+                  <div class="chip"><span class="chip-dot"></span> APIs</div>
+                  <div class="chip"><span class="chip-dot"></span> (R)DBMS</div>
+                  <div class="chip"><span class="chip-dot"></span> NLP</div>
+                  <div class="chip"><span class="chip-dot"></span> WebDev</div>
+                  <div class="chip"><span class="chip-dot"></span> Web Scraping</div>
+                  <div class="chip"><span class="chip-dot"></span> Systems Programming</div>
+                  <div class="chip"><span class="chip-dot"></span> Network Analytics</div>
+                  <div class="chip"><span class="chip-dot"></span> Password Cracking</div>
+                </div>
+              </div>
+
+              <div class="hero-panel hero-panel--contact hero-panel--compact">
+                <div class="hero-panel-header">
+                  <div class="hero-panel-title">Systems + Infra</div>
+                  <div class="card-badge">Focus</div>
+                </div>
+                <div class="hero-chip-grid">
+                  <div class="chip"><span class="chip-dot"></span> Linux</div>
+                  <div class="chip"><span class="chip-dot"></span> Shell</div>
+                  <div class="chip"><span class="chip-dot"></span> Git</div>
+                  <div class="chip"><span class="chip-dot"></span> Docker</div>
+                  <div class="chip"><span class="chip-dot"></span> Wireshark</div>
+                  <div class="chip"><span class="chip-dot"></span> Databricks</div>
+                  <div class="chip"><span class="chip-dot"></span> Spark</div>
+                  <div class="chip"><span class="chip-dot"></span> PostgreSQL</div>
+                  <div class="chip"><span class="chip-dot"></span> Jenkins</div>
+                  <div class="chip"><span class="chip-dot"></span> GitHub Actions</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-face-actions">
+              <button id="hero-flip-toggle-back" class="btn btn-outline hero-toggle-secondary" type="button">
+                Back to story
+              </button>
+            </div>
+          </article>
         </div>
       </div>
-
-      <aside class="hero-aside">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">Quick Snapshot</div>
-            <div class="card-badge">At a glance</div>
-          </div>
-          <div class="card-body">
-              <div><strong>CompSci &amp; CSec @ USYD</strong> with experience in:</div>
-            <div class="inline-list">
-              <div class="chip">
-                <span class="chip-dot"></span> Data Pipelines
-              </div>
-              <div class="chip">
-                <span class="chip-dot"></span> APIs
-              </div>
-              <div class="chip">
-                <span class="chip-dot"></span> (R)DBMS
-              </div>
-              <div class="chip">
-                <span class="chip-dot"></span> NLP
-              </div>
-              <div class="chip">
-                <span class="chip-dot"></span> WebDev
-              </div>
-              <div class="chip">
-                <span class="chip-dot"></span> Web Scraping
-              </div>
-              <div class="chip">
-                <span class="chip-dot"></span> Systems Programming
-              </div>
-              <div class="chip">
-                <span class="chip-dot"></span> Network Analytics &amp; Firewall Config
-              </div>
-              <div class="chip">
-                <span class="chip-dot"></span> Amateur Software &amp; Password Cracking
-              </div>
-            </div>
-
-            <div class="card-links">
-              <!-- TODO: Update profile links -->
-              <a class="card-link" href="https://www.linkedin.com/in/arian-islam-18591b296/" target="_blank" rel="noreferrer">
-                LinkedIn →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">Contact</div>
-          </div>
-          <div class="card-body">
-              <div><strong>Email:</strong> <a href="arianislam.010@gmail.com">arianislam.010@gmail.com</a></div>
-              <div><strong>GitHub:</strong> <a href="https://github.com/HotelBudapest" target="_blank" rel="noreferrer">
-                github.com/HotelBudapest
-              </a></div>
-              <div><strong>Location:</strong> Sydney, Australia</div>
-          </div>
-        </div>
-      </aside>
+      </div>
     </section>
 
     <!-- EXPERIENCE -->
@@ -190,12 +207,33 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-role">Research Assistant</div>
-          <div class="timeline-org">Faculty of Engineering, University of Sydney</div>
+          <div class="timeline-org">University of Sydney</div>
           <div class="timeline-meta">August 10, 2026 – Present</div>
           <p class="timeline-desc">
-           Developing research protocols and driving the execution of research activities. Currently working alongside researchers and stakeholders ON:<br>
-           <strong>AI-assisted learning tools, Process Automation and broader research workflows. </strong>
+           Developing research protocols and driving the execution of research activities across multiple faculty appointments, with work spanning <strong>AI-assisted learning tools, process automation, and broader research workflows.</strong>
+           Selected for 2 faculties:
           </p>
+          <div class="timeline-nested">
+            <div class="timeline-subitem">
+              <div class="timeline-subhead">
+                <span class="timeline-subtitle">Faculty of Engineering</span>
+                <span class="timeline-submeta">August 10, 2026 – Present</span>
+              </div>
+              <div class="timeline-subdesc">
+                Broader university research appointment supporting interdisciplinary work across engineering-led projects and stakeholders.
+              </div>
+            </div>
+            <div class="timeline-subitem">
+              <div class="timeline-subhead">
+                <span class="timeline-subtitle">Faculty of Computer Science</span>
+                <span class="timeline-submeta">September 1, 2026 – Present</span>
+              </div>
+              <div class="timeline-subdesc">
+    Supporting research execution through protocol development, grant-process
+      coordination, data analysis, and research documentation across researchers and stakeholders.
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Timeline item 2 -->
@@ -432,7 +470,7 @@
           <div class="timeline-meta">july 2023 – july 2027 (expected)</div>
           <p class="timeline-desc">
           <strong>Major:</strong> Computer Science <br>
-          <strong>Minor:</strong>Cybersecurity<br><br>
+          <strong>Minor:</strong> Cybersecurity <br><br>
           <strong>Overall WAM:</strong> High Distinction
           </p>
         </div>
@@ -483,6 +521,13 @@
     const YEAR_SPAN = document.getElementById('year');
     const nav = document.querySelector('.nav');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const heroSummaryPanel = document.getElementById('hero-summary-panel');
+    const heroPanel = document.getElementById('hero-summary-card');
+    const heroToggle = document.getElementById('hero-toggle');
+    const heroToggleLabel = document.getElementById('hero-toggle-label');
+    const heroFlipCard = document.getElementById('hero-flip-card');
+    const heroFlipFront = document.getElementById('hero-flip-toggle-front');
+    const heroFlipBack = document.getElementById('hero-flip-toggle-back');
 
     // Year in footer
     YEAR_SPAN.textContent = new Date().getFullYear();
@@ -517,6 +562,73 @@
       localStorage.setItem('theme', next);
       applyTheme(next);
     });
+
+    function applyHeroState(expanded) {
+      if (!heroPanel || !heroToggle || !heroToggleLabel || !heroSummaryPanel) return;
+      heroSummaryPanel.classList.toggle('hero-main--expanded', expanded);
+      heroPanel.classList.toggle('hero-overlay--hidden', !expanded);
+      heroPanel.setAttribute('aria-hidden', String(!expanded));
+      heroToggle.setAttribute('aria-expanded', String(expanded));
+      heroToggleLabel.textContent = expanded ? 'Close' : 'Learn more';
+      if (!expanded && heroFlipCard) {
+        heroFlipCard.classList.remove('is-flipped');
+      }
+    }
+
+    if (heroPanel && heroToggle && heroToggleLabel) {
+      applyHeroState(false);
+
+      heroToggle.addEventListener('click', () => {
+        const expanded = heroToggle.getAttribute('aria-expanded') === 'true';
+        applyHeroState(!expanded);
+      });
+    }
+
+    if (heroFlipFront && heroFlipCard) {
+      heroFlipFront.addEventListener('click', () => {
+        heroFlipCard.classList.add('is-flipped');
+      });
+    }
+
+    if (heroFlipBack && heroFlipCard) {
+      heroFlipBack.addEventListener('click', () => {
+        heroFlipCard.classList.remove('is-flipped');
+      });
+    }
+
+    document.querySelectorAll('[data-hero-close]').forEach((el) => {
+      el.addEventListener('click', () => {
+        applyHeroState(false);
+      });
+    });
+
+    if (heroPanel) {
+      heroPanel.addEventListener(
+        'wheel',
+        () => {
+          if (heroToggle && heroToggle.getAttribute('aria-expanded') === 'true') {
+            applyHeroState(false);
+          }
+        },
+        { passive: true }
+      );
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        applyHeroState(false);
+      }
+    });
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (heroToggle && heroToggle.getAttribute('aria-expanded') === 'true') {
+          applyHeroState(false);
+        }
+      },
+      { passive: true }
+    );
 
     if (navToggle && navLinksEl) {
       navToggle.addEventListener("click", (e) => {
